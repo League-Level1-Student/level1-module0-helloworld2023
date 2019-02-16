@@ -20,8 +20,8 @@ public class BodyPartQuiz {
 	// package, and change the names below.
 	
 	String firstImage = "src/Tzuyu.jpeg";
-	String secondImage = "leonardo.jpeg";
-	String thirdImage = "src/morgan.jpeg";
+	String secondImage = "src/Billie.jpg";
+	String thirdImage = "src/.jpeg";
 	
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
@@ -46,13 +46,16 @@ int score = 0;
 		else {
 			JOptionPane.showMessageDialog(null, "Incorrect. This is Tzuyu.");
 		}
+		System.out.println(score);
 		// 7. Use the showNextImage() method below to get the next image
 		showNextImage();
 	    	// 8. Show them their current score
-		
 		// 9. .... repeat for all your images.....
-
-
+		String guess2 = JOptionPane.showInputDialog("Who is this?");
+		if (guess2.equals("Billie") || guess2.equals("Billie Eilish")) {
+			JOptionPane.showMessageDialog(null, "Correct");
+			score = score ++;
+		}
 	}
 
 	public void showNextImage() {
