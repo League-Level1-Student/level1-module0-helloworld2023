@@ -19,10 +19,9 @@ public class BodyPartQuiz {
 	// or if you prefer, get celebrity photos from the Internet, place them in the default
 	// package, and change the names below.
 	
-	String firstImage = "src/arnold.jpeg";
-	String secondImage = "src/leonardo.jpeg";
+	String firstImage = "src/Tzuyu.jpeg";
+	String secondImage = "leonardo.jpeg";
 	String thirdImage = "src/morgan.jpeg";
-	String fourthImage = "src/jack.jpeg";
 	
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
@@ -31,22 +30,26 @@ public class BodyPartQuiz {
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
-
+int score = 0;
 		// 2. Set the size of the window in the initializeGui() method below
-			
+			initializeGui();
 		// 4. Ask the user who this person is and store their answer
-		String guess= JOptionPane.showInputDialog("who is this?");
-
+		String guess= JOptionPane.showInputDialog("Who is this?");
 		// 5. Check their answer. If they guessed correctly:
 		// -- Tell them they are right and increase the score by 1
-
+		if (guess.equals("Tzuyu") || guess.equals("Chou Tzuyu")) {
+			JOptionPane.showMessageDialog(null, "Correct");
+			score = score ++;
+		}
 		// 6. Otherwise:
 		// -- Tell them they are wrong and who the person is
-
+		else {
+			JOptionPane.showMessageDialog(null, "Incorrect. This is Tzuyu.");
+		}
 		// 7. Use the showNextImage() method below to get the next image
 		showNextImage();
 	    	// 8. Show them their current score
-
+		
 		// 9. .... repeat for all your images.....
 
 
@@ -92,8 +95,6 @@ public class BodyPartQuiz {
 		imageLabel = loadImage(secondImage);
 		imageList.add(imageLabel);
 		imageLabel = loadImage(thirdImage);
-		imageList.add(imageLabel);
-		imageLabel = loadImage(fourthImage);
 		imageList.add(imageLabel);
 	}
 
