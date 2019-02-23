@@ -21,7 +21,7 @@ public class BodyPartQuiz {
 	
 	String firstImage = "src/Tzuyu.jpeg";
 	String secondImage = "src/Billie.jpg";
-	String thirdImage = "src/.jpeg";
+	String thirdImage = "src/Jennie.jpeg";
 	
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
@@ -30,7 +30,7 @@ public class BodyPartQuiz {
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
-int score = 0;
+		int score = 0;
 		// 2. Set the size of the window in the initializeGui() method below
 			initializeGui();
 		// 4. Ask the user who this person is and store their answer
@@ -39,14 +39,13 @@ int score = 0;
 		// -- Tell them they are right and increase the score by 1
 		if (guess.equals("Tzuyu") || guess.equals("Chou Tzuyu")) {
 			JOptionPane.showMessageDialog(null, "Correct");
-			score = score ++;
+			score ++;
 		}
 		// 6. Otherwise:
 		// -- Tell them they are wrong and who the person is
 		else {
 			JOptionPane.showMessageDialog(null, "Incorrect. This is Tzuyu.");
 		}
-		System.out.println(score);
 		// 7. Use the showNextImage() method below to get the next image
 		showNextImage();
 	    	// 8. Show them their current score
@@ -54,8 +53,21 @@ int score = 0;
 		String guess2 = JOptionPane.showInputDialog("Who is this?");
 		if (guess2.equals("Billie") || guess2.equals("Billie Eilish")) {
 			JOptionPane.showMessageDialog(null, "Correct");
-			score = score ++;
+			score ++;
 		}
+		else {
+			JOptionPane.showMessageDialog(null, "Incorrect. This is Billie.");
+		}
+		showNextImage();
+		String guess3 = JOptionPane.showInputDialog("Who is this?");
+		if (guess3.equals("Jennie") || guess3.equals("Jennie Kim")) {
+			JOptionPane.showMessageDialog(null, "Correct");
+			score ++;
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Incorrect. This is Jennie.");
+		}
+		System.out.println(score);
 	}
 
 	public void showNextImage() {
@@ -77,7 +89,7 @@ int score = 0;
 		window.add(panel);
 		
 		// 3. Change the size of the window so that you can only see part of the image.		
-		window.setSize(500,500);
+		window.setSize(300,300);
 		
 		showNextImage();
 		
