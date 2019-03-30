@@ -33,11 +33,11 @@ void draw(){
   }
   fill (118, 118, 118);
   rect (mouseX, 490, 40, 20);
-  intersects (x, y, mouseX, 490, 40);
-  if(){
-    
+  if (intersects(x, y, mouseX, 490, 40)){
+    velocity2 *= -1;
+    velocity *= -1;
   }
-}   
+}  
 boolean intersects(int ballX, int ballY, int paddleX, int paddleY, int paddleLength) {
      if (ballY > paddleY && ballX > paddleX && ballX < paddleX + paddleLength)
           return true;
